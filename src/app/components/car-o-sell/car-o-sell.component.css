@@ -1,0 +1,134 @@
+.car-o-sell-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.car-o-sell-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.car-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.car-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 30px;
+  text-align: left;
+}
+
+.car-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.car-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #7f8c8d;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.view-details {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.view-details:hover {
+  background-color: #2980b9;
+}
+
+.car-o-sell-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.car-o-sell-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.car-o-sell-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .car-slide img {
+    height: 300px;
+  }
+
+  .car-info {
+    padding: 20px;
+  }
+
+  .car-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .car-o-sell-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="car-o-sell-container">
+  <div class="car-o-sell-slider" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+    <div class="car-slide" *ngFor="let car of cars; let i = index" [class.active]="i === currentIndex">
+      <img [src]="car.imageUrl" [alt]="car.name">
+      <div class="car-info">
+        <h2>{{ car.name }}</h2>
+        <p>{{ car.description }}</p>
+        <p class="price">${{ car.price | number }}</p>
+        <button class="view-details" (click)="viewDetails(car.id)">View Details</button>
+      </div>
+    </div>
+  </div>
+  
+  <button class="car-o-sell-btn prev" (click)="prevSlide()">‹</button>
+  <button class="car-o-sell-btn next" (click)="nextSlide()">›</button>
+  
+  <div class="car-o-sell-dots">
+    <span class="dot" 
+          *ngFor="let car of cars; let i = index" 
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)">
+    </span>
+  </div>
+</div>

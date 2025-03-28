@@ -1,0 +1,33 @@
+<div class="car-detail-container" *ngIf="car">
+  <div class="car-image">
+    <img [src]="car.imageUrl" [alt]="car.name" />
+  </div>
+  <div class="car-details">
+    <h1>{{ car.name }}</h1>
+    <p class="description">{{ car.description }}</p>
+    <p class="price">${{ car.price | number }}</p>
+
+    <div class="specs">
+      <h2>Specifications</h2>
+      <ul>
+        <li><strong>Engine:</strong> Simulated data - V8 Turbo</li>
+        <li><strong>Horsepower:</strong> Simulated data - 450 HP</li>
+        <li><strong>0-60 mph:</strong> Simulated data - 4.2 seconds</li>
+        <li>
+          <strong>Fuel Economy:</strong> Simulated data - 22 MPG city / 28 MPG
+          highway
+        </li>
+      </ul>
+    </div>
+
+    <div class="actions">
+      <button class="action-btn primary">Schedule Test Drive</button>
+      <button class="action-btn secondary">Add to Favorites</button>
+      <button class="action-btn back" (click)="goBack()">
+        Back to CAR-O-SELL
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="loading" *ngIf="!car">Loading car details...</div>
